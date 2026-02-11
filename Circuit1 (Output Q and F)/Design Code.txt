@@ -1,0 +1,11 @@
+// Circuit 1: Outputs G and F
+module circuit_1 (
+    input a, b, c,
+    output G, F
+);
+    assign F = (~b) | c;
+
+    // 2. Calculate G using F
+    assign G = (a & b) & F;
+
+endmodule
