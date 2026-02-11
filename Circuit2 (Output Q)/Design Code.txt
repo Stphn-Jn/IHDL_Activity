@@ -1,0 +1,12 @@
+// Circuit 2: Output Q
+module circuit_2 (
+    input a, b, c,
+    output Q
+);
+    wire top_term;
+    assign top_term = a & b & c;
+    wire bottom_term;
+    assign bottom_term = a & (~b ^ ~c);
+    assign Q = top_term | bottom_term;
+
+endmodule
