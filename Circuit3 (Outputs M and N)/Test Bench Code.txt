@@ -1,0 +1,17 @@
+module tb_circuit_3;
+    reg a, b, c, d;
+    wire M, N;
+
+    circuit_3 uut (a, b, c, d, M, N);
+
+    initial begin
+        $dumpfile("dump.vcd"); $dumpvars(1);
+        {a, b, c, d} = 4'b0000;
+        repeat(16) begin
+            #10;
+            {a, b, c, d} = {a, b, c, d} + 1;
+        end
+        
+        $finish;
+    end
+endmodule

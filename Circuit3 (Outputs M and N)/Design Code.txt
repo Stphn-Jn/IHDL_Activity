@@ -1,0 +1,13 @@
+// Circuit 3: Outputs M and N
+module circuit_3 (
+    input a, b, c, d,
+    output M, N
+);
+    wire internal_and;
+    wire bottom_or;
+    assign internal_and = (a | b) & (c | d);
+    assign M = ~internal_and;
+    assign bottom_or = (~b) | (~d);
+    assign N = internal_and ^ bottom_or;
+
+endmodule
